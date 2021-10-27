@@ -1,0 +1,108 @@
+{% extends 'pages/base.html'%}
+
+{% block content %}
+
+{% load static %}
+
+<main id="main">
+
+<!-- ======= Hero Section ======= -->
+<div>
+    <section id="hero" class="d-flex justify-cntent-center align-items-center">
+      <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+  
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Welcome to <span>UCSPAK</span></h2>
+            <p class="animate__animated animate__fadeInUp">Amplifying community voices for sustainable peace in Kenya " a project sponsored by USAID via SaferWorld as the lead consortium in the program implementation in Kenya.</p>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          </div>
+        </div>
+  
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">we spread peace </h2>
+            <p class="animate__animated animate__fadeInUp">Peace does not rest in the charters and covenants alone. It lies in the hearts and minds of all people. So let us not rest all our hopes on parchment and on paper, let us strive to build peace, a desire for peace, a willingness to work for peace in the hearts and minds of all of our people.</p>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          </div>
+        </div>
+  
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="carousel-container">
+            <h2 class="animate__animated animate__fadeInDown">Let's discuss</h2>
+            <p class="animate__animated animate__fadeInUp">Join the discussion to discuss on the role of youth and youth serving organizations in the implementation of UNSC Resolution 2250 on youth, peace and security.</p>
+            <a href="#" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          </div>
+        </div>
+  
+        <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+        </a>
+  
+        <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+          <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+        </a>
+  
+      </div>
+    </section><!-- End Hero -->
+   </div>
+
+   	<!--HERO TWO-->
+
+     <!-- ======= About Section ======= -->
+     <section class="about" data-aos="fade-up">
+        <div class="container">
+  
+          <div class="row">
+            <div class="col-lg-6">
+              <img src="{% static 'pages/assets/img/about.jpg' %}" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 pt-4 pt-lg-0">
+              <h3>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h3>
+              <p class="fst-italic">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua.
+              </p>
+              <ul>
+                <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                <li><i class="bi bi-check2-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                <li><i class="bi bi-check2-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+              </ul>
+              <p>
+                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum
+              </p>
+            </div>
+          </div>
+  
+        </div>
+      </section><!-- End About Section -->
+
+
+	<!--HERO TWO-->
+ 
+    <div class="row" data-aos="fade-up">
+        <div class="col-lg-5">
+            <a class="twitter-timeline" data-height="500" href="https://twitter.com/UcspakOfficial?ref_src=twsrc%5Etfw">Tweets by UcspakOfficial</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          <!--img src="assets/img/features-1.svg" class="img-fluid" alt=""-->
+         
+        </div>
+        <div class="col-lg-7">
+           <h3>UCSPAK posts tweets daily and we encourage our audience to browse it for new updates.</h3>
+         
+          <p >We would like to thank all the partners who participated in the validation workshop for our research on Youth and Peacebuilding at Sarova Panafric today. Present was the Ministry of Interior, Ministry of public service, Youth and Gender, UNDP, NCIC, among others.
+Our special appreciation goes to the National Steering Committee on Peace Building and Conflict Management (NSC) and UNDP for supporting us in this research .
+The purpose of the research was to provide a baseline information and analysis defining a strategy for the development of the Kenya National Action Plan on implementation of UNSCR 2250. Nothing can stop an idea whose time has come. Young people must lead in championing for peace.</p>
+        </div>
+</div>
+
+  
+  <!--END OF HERO TWO-->
+
+    
+</main>
+{% endblock %}

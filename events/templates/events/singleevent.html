@@ -1,0 +1,104 @@
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+  <main id="main">
+
+    
+     <!-- ======= Blog Section ======= -->
+     <section class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>{{event.event_title}}</h2>
+            
+  
+            <ol>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'event' %}">Event</a></li>
+            
+            </ol>
+          </div>
+  
+        </div>
+      </section><!-- End Blog Section -->
+  
+      <!-- ======= Blog Single Section ======= -->
+      <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row d-flex justify-content-center align-items-center">
+  
+            <div class="col-lg-8 entries">
+  
+              <article class="entry entry-single">
+  
+                <div class="entry-img">
+                  <img src="{{ event.image.url }}" alt="" class="img-fluid">
+                </div>
+  
+                <h2 class="entry-title">
+                  <a href="">{{ event.event_title }}</a>
+                </h2>
+  
+            
+  
+                <div class="entry-content">
+                  <p>
+                    {{ event.event_summary }}
+                  </p>
+  
+            
+                  <img src="{{ event.image.url }}" class="img-fluid" alt="">
+  
+                  <h3>Ut repellat blanditiis est dolore sunt dolorum quae.</h3>
+                  <p>
+                    Rerum ea est assumenda pariatur quasi et quam. Facilis nam porro amet nostrum. In assumenda quia quae a id praesentium. Quos deleniti libero sed occaecati aut porro autem. Consectetur sed excepturi sint non placeat quia repellat incidunt labore. Autem facilis hic dolorum dolores vel.
+                    Consectetur quasi id et optio praesentium aut asperiores eaque aut. Explicabo omnis quibusdam esse. Ex libero illum iusto totam et ut aut blanditiis. Veritatis numquam ut illum ut a quam vitae.
+                  </p>
+                  <p>
+                    Alias quia non aliquid. Eos et ea velit. Voluptatem maxime enim omnis ipsa voluptas incidunt. Nulla sit eaque mollitia nisi asperiores est veniam.
+                  </p>
+  
+                </div>
+  
+            
+  
+              </article><!-- End blog entry -->
+  
+              <div class="blog-author d-flex align-items-center">
+                <img src="{% static 'pages/assets/img/ucspak.png' %}" class="rounded-circle float-left" alt="">
+                <div>
+                  <h4>Allan chacha</h4>
+                  <div class="social-links">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="biu bi-instagram"></i></a>
+                  </div>
+                  <p>
+                    Join us as we continue to connect education with peace in our institutions of higher learning. This case study assesses the drivers of youth’s participation in peacebuilding activities in Kenya by
+                    providing concrete empirical examples (through case studies) of youth-led peacebuilding interventions
+                  </p>
+                </div>
+              </div>
+              </div><!-- End blog author bio -->
+             
+    
+        
+    
+          </div>
+        </section><!-- End Blog Single Section -->
+  
+
+			
+
+        
+		  
+       
+
+  </main><!-- End #main -->
+  {% endblock %} 

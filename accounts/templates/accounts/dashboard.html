@@ -1,0 +1,50 @@
+
+
+
+
+{% extends 'pages/base.html'%}
+
+{% block content %}
+
+
+
+{% load static %}
+
+<main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="text-success">Your dashboard</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>dashboard</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+         
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            {% include 'pages/message.html' %}
+            <h3 class="text-success"> UCSPAK Identity card</h1>
+            <p> <a href="{% url 'dashboard' %}">Click here to download your ID </a></p>
+          </div>
+          <div class="col-lg-6">
+            <img src="{% static 'pages/assets/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+</main>
+
+{% endblock %}

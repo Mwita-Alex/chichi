@@ -215,6 +215,14 @@
     }
   });
 
+
+   /**
+   * error message fadeout
+   */
+    setTimeout(function(){
+      $('message').fadeOut('slow');
+    },4000)
+
   /**
    * Animation on scroll
    */
@@ -226,5 +234,7 @@
       mirror: false
     });
   });
+ 
 
 })()
+

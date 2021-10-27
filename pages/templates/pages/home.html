@@ -1,76 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
 {% load static %}
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>UCSPAK - University Student Association</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="{% static 'pages/assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'pages/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="{% static 'pages/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/assets/vendor/aos/aos.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
-  <link href="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="{% static 'pages/assets/css/style.css' %}" rel="stylesheet">
-
-	<!-- Template2 Main CSS File -->
-  <link href="{% static 'pages/assets/style.css' %}" rel="stylesheet">
-  <!-- =======================================================
-  * Template Name: Moderna - v4.7.0
-  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body>
-
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-    <div class="container d-flex justify-content-between align-items-center">
-
-      <div class="logo">
-        <h1 class="text-light"><a href=""><span>UCSPAK</span></a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="#"><img src="{% static 'pages/assets/img/logo.png' %}" alt="" class="img-fluid"></a>
-      </div>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="active " href="">Home</a></li>
-          <li><a href="">About</a></li>
-          <li><a href="">Events</a></li>
-          <li><a href="">Gallery</a></li>
-          <li><a href="">Team</a></li>
-          <li><a href="">Blog</a></li>
-		<li class="px-2"><a href="">Contact Us</a></li>
-		  <li ><a class="badge bg-warning text-wrap px-2" href="">Register</a></li>
-          
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-    </div>
-  </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
 <div>
-  <section id="hero" class="d-flex justify-cntent-center align-items-center">
+  <section id="hero" class="d-flex justify-content-center align-items-center">
     <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
       <!-- Slide 1 -->
@@ -78,7 +15,7 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>UCSPAK</span></h2>
           <p class="animate__animated animate__fadeInUp">Amplifying community voices for sustainable peace in Kenya " a project sponsored by USAID via SaferWorld as the lead consortium in the program implementation in Kenya.</p>
-          <a href="#" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
         </div>
       </div>
 
@@ -87,7 +24,7 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">we spread peace </h2>
           <p class="animate__animated animate__fadeInUp">Peace does not rest in the charters and covenants alone. It lies in the hearts and minds of all people. So let us not rest all our hopes on parchment and on paper, let us strive to build peace, a desire for peace, a willingness to work for peace in the hearts and minds of all of our people.</p>
-          <a href="#" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
         </div>
       </div>
 
@@ -96,7 +33,7 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Let's discuss</h2>
           <p class="animate__animated animate__fadeInUp">Join the discussion to discuss on the role of youth and youth serving organizations in the implementation of UNSC Resolution 2250 on youth, peace and security.</p>
-          <a href="#" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
         </div>
       </div>
 
@@ -126,7 +63,7 @@
 Our special appreciation goes to the National Steering Committee on Peace Building and Conflict Management (NSC) and UNDP for supporting us in this research .
 The purpose of the research was to provide a baseline information and analysis defining a strategy for the development of the Kenya National Action Plan on implementation of UNSCR 2250. Nothing can stop an idea whose time has come. Young people must lead in championing for peace.</p>
           </div>
-        </div>
+</div>
   
 	
 	<!--END OF HERO TWO-->
@@ -149,9 +86,9 @@ The purpose of the research was to provide a baseline information and analysis d
 		</div>
 
         <div class="row" data-aos="fade-up">
-          <div class="col-md-5"  align="center">
+          <div class="col-md-5" >
             <!--img src="assets/img/features-1.svg" class="img-fluid" alt=""-->
-			 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FUCSPAKOfficial&tabs=timeline&width=400&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1854214031560227" width="400" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+			 <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fweb.facebook.com%2FUCSPAKOfficial&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1854214031560227" width="300" height="400" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
           </div>
           <div class="col-md-7 pt-4">
             <p class="fst-italic">
@@ -238,77 +175,4 @@ The purpose of the research was to provide a baseline information and analysis d
     </section><!-- End Why Us Section -->
 
   </main><!-- End #main -->
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
-
-    <div class="footer-top">
-      <div class="container">
-        <div class="row">
-
-          <div class="col-lg-4 col-md-8 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Privacy policy</a></li>
-            </ul>
-          </div>
-
-         
-
-          <div class="col-lg-4 col-md-8 footer-contact">
-            <h4>Contact Us</h4>
-            <p class="text-success">
-              Moi Avenue, <br>
-              Nairobi, P.O BOX 02000<br>
-              Kenya <br><br>
-              <strong>Phone:</strong> +254724344040<br>
-              <strong>Email:</strong> info@ucspak.com<br>
-            </p>
-
-          </div>
-
-          <div class="col-lg-4 col-md-8 footer-info">
-            <h3>About UCSPAK</h3>
-            <p class="text-success">UCSPAK is a non-profit and a non-political student association, established with the major objective of promoting peace in institutions of learning..</p>
-            <div class="social-links mt-3">
-              <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-              <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-              <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-              <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="copyright">
-        &copy; Copyright <strong><span>UCSPAK</span></strong>. All Rights Reserved
-      </div>
-    
-    </div>
-  </footer><!-- End Footer -->
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="{% static 'pages/assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/bootstrap/js/bootstrap.bundle.min.j' %}s"></script>
-  <script src="{% static 'pages/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/php-email-form/validate.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/purecounter/purecounter.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
-
-  <!-- Template Main JS File -->
-  <script src="{% static 'pages/assets/js/main.js' %}"></script>
-
-</body>
-
-</html>
+  {% endblock %} 

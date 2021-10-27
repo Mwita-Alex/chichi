@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>UCSPAK - University Student Association</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'pages/assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'pages/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'pages/assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/boxicons/css/boxicons.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'pages/assets/css/style.css' %}" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Moderna - v4.7.0
+  * Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <div class="logo">
+        <h1 class="text-light"><a href="{% url 'index' %}"><span>UCSPAK</span></a></h1>
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="#"><img src="{% static 'pages/assets/img/logo.png' %}" alt="" class="img-fluid"></a>
+      </div>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="active " href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'event' %}">Events</a></li>
+          <li><a href="{% url 'gallery' %}">Gallery</a></li>
+          <li><a href="{% url 'team' %}">Team</a></li>
+          <li><a href="{% url 'blog' %}">Blog</a></li>
+          {% if user.is_authenticated %}
+            <li><a href="javascript: {document.getElementById('logout').submit()}">Logout  {{user.username}}</a>
+              <form action="{% url 'logout' %}" id="logout" method="POST">
+                {% csrf_token %}
+                <input type="hidden">
+
+              </form>
+            
+            </li>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+          {% else %}
+            <li><a href="{% url 'login' %}">Login</a></li>
+            <li><a  href="{% url 'register' %}">Register</a></li>
+          {% endif %}
+            
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+
+
+ {% block content %} {% endblock %}
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-8 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right text-success"></i> <a class="text-success" href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+         
+
+          <div class="col-lg-4 col-md-8 footer-contact">
+            <h4>Contact Us</h4>
+            <p class="text-success">
+              Moi Avenue, <br>
+              Nairobi, P.O BOX 02000<br>
+              Kenya <br><br>
+              <strong>Phone:</strong> +254724344040<br>
+              <strong>Email:</strong> info@ucspak.com<br>
+            </p>
+
+          </div>
+
+          <div class="col-lg-4 col-md-8 footer-info">
+            <h3>About UCSPAK</h3>
+            <p class="text-success">UCSPAK is a non-profit and a non-political student association, established with the major objective of promoting peace in institutions of learning..</p>
+            <div class="social-links mt-3">
+              <a href="" class="twitter"><i class="bx bxl-twitter"></i></a>
+              <a href="" class="facebook"><i class="bx bxl-facebook"></i></a>
+              <a href="" class="instagram"><i class="bx bxl-instagram"></i></a>
+              <a href="" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>UCSPAK</span></strong>. All Rights Reserved
+      </div>
+    
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'pages/assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/bootstrap/js/bootstrap.bundle.min.j' %}s"></script>
+  <script src="{% static 'pages/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/purecounter/purecounter.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'pages/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static 'pages/assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

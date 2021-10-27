@@ -1,0 +1,92 @@
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+  <main id="main">
+
+    
+     <!-- ======= Blog Section ======= -->
+     <section class="breadcrumbs">
+        <div class="container">
+  
+          <div class="d-flex justify-content-between align-items-center">
+            <h2>Blog</h2>
+  
+            <ol>
+              <li><a href="{% url 'index' %}">Home</a></li>
+              <li><a href="{% url 'blog' %}">Blog</a></li>
+            </ol>
+          </div>
+  
+        </div>
+      </section><!-- End Blog Section -->
+      <!-- ======= Blog Single Section ======= -->
+      <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="row d-flex justify-content-center align-items-center">
+  
+            <div class="col-lg-8 entries">
+  
+              <article class="entry entry-single">
+  
+                <div class="entry-img">
+                  <img src="{{ blog.image.url }}" alt="" class="img-fluid">
+                </div>
+  
+                <h2 class="entry-title">
+                  <a href="blog-single.html">{{ blog.blog_title}}</a>
+                </h2>
+  
+               
+  
+                <div class="entry-content">
+                  <p>
+                    {{ blog.blog_summary }}
+                  </p>
+  
+                  
+                  <img src="{{ blog.image.url }}" class="img-fluid" alt="">
+  
+                  
+  
+                </div>
+  
+  
+              </article><!-- End blog entry -->
+  
+              <div class="blog-author d-flex align-items-center">
+                <img src="{% static 'pages/assets/img/ucspak.png' %}" class="rounded-circle float-left" alt="">
+                <div>
+                  <h4>Allan Chacha</h4>
+                  <div class="social-links">
+                    <a href=""><i class="bi bi-twitter"></i></a>
+                    <a href=""><i class="bi bi-facebook"></i></a>
+                    <a href=""><i class="biu bi-instagram"></i></a>
+                  </div>
+                  <p>
+                    Join us as we continue to connect education with peace in our institutions of higher learning. This case study assesses the drivers of youth’s participation in peacebuilding activities in Kenya by
+                     providing concrete empirical examples (through case studies) of youth-led peacebuilding interventions
+                  </p>
+                </div>
+              </div>
+              </div><!-- End blog author bio -->
+    
+        
+    
+          </div>
+        </section><!-- End Blog Single Section -->
+  
+
+			
+
+        
+		  
+       
+
+  </main><!-- End #main -->
+  {% endblock %} 

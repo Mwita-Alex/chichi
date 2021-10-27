@@ -1,1 +1,71 @@
-<h1>THIS IS THE GALLERY PAGE</h1>
+
+{% extends 'pages/base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+  <main id="main">
+
+    
+
+   
+
+			 <!-- ======= Our Portfolio Section ======= -->
+             <section class="breadcrumbs">
+                <div class="container">
+          
+                  <div class="d-flex justify-content-between align-items-center">
+                    <h2>Our Gallery</h2>
+                    <ol>
+                      <li><a href="{% url 'index' %}">Home</a></li>
+                      <li>Our Gallery</li>
+                    </ol>
+                  </div>
+          
+                </div>
+              </section><!-- End Our Portfolio Section -->
+          
+              <!-- ======= Portfolio Section ======= -->
+              <section class="portfolio">
+                <div class="container">
+
+                
+          
+                
+          
+                  <div class="row portfolio-container" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
+
+                    {% for picture in images %}
+
+
+                    <div class="col-lg-4 col-md-6 portfolio-wrap filter-app">
+                      <div class="portfolio-item">
+                        <img src="{{ picture.image.url }}" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                          <h3>{{ picture.image_title}}</h3>
+                          <div>
+                            <a href="{{ picture.image.url }}" data-gallery="portfolioGallery" class="portfolio-lightbox"><i class="bx bx-plus"></i></a>
+                           
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+
+                    {% endfor %}
+                       
+          
+                  </div>
+          
+                </div>
+              </section><!-- End Portfolio Section -->
+          
+        
+		  
+       
+
+  </main><!-- End #main -->
+  {% endblock %} 

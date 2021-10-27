@@ -1,0 +1,58 @@
+{% extends 'pages/base.html'%}
+
+{% block content %}
+
+
+
+{% load static %}
+
+<main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="text-success">Reset Password</h2>
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>Pass Reset</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-lg-6">
+            <img src="{% static 'pages/assets/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <h1>RESET PASSWORD</h1>
+
+                <form action="{% url 'reset' %}" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group form-box">
+                        <input type="email" name="email" class="input-text" placeholder="Enter email" required>
+                        <i class="flaticon-mail"></i>
+
+                    </div>
+                    
+                    <div class="form-group mb-0 clearfix">
+                        <button type="submit"  class="btn btn-warning float-left">RESET</button>
+
+                    </div>
+
+                </form>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+</main>
+
+{% endblock %}
