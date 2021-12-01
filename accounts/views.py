@@ -135,7 +135,7 @@ def pdfgenerator(request):
     graduation = "Graduation: "
     phone = "Phone: "
     buf = io.BytesIO()
-    c = canvas.Canvas(buf, bottomup=0)
+    c = canvas.Canvas(buf)
     #textob = c.beginText()
     #textob.setTextOrigin(inch, inch)
     #textob.setFont("Helvetica", 14)
@@ -149,20 +149,17 @@ def pdfgenerator(request):
         width = 86*mm
         height = 54*mm
         c.setPageSize((width,height))
-        c.drawImage(logoleft, 5, 5, height=20*mm, width=20*mm)
-        c.setFont('Helvetica',12)
-        c.setFillColorRGB(0, 0,255)
-        c.drawString(70, 20, title)
-        c.line(71, 25, 215, 25)
+        c.drawImage(logoleft, 180, 90, height=20*mm, width=20*mm, mask='auto')
+       
         c.setFont('Courier',12)
         c.setFillColorRGB(0, 0,255)
-        c.drawString(70, 40, name)
+        c.drawString(10, 40, name)
         c.setFillColorRGB(0, 0, 0)
-        c.drawString(110, 40, memberdetail.student_name)
+        c.drawString(50, 40, memberdetail.student_name)
         c.setFillColorRGB(0, 0,255)
-        c.drawString(70, 60, admission)
+        c.drawString(10, 60, admission)
         c.setFillColorRGB(0, 0, 0)
-        c.drawString(150, 60, memberdetail.admission_number)
+        c.drawString(90, 60, memberdetail.admission_number)
         c.setFillColorRGB(0, 0,255)
         c.drawString(10, 80, university)
         c.setFillColorRGB(0, 0, 0)
@@ -175,6 +172,10 @@ def pdfgenerator(request):
         c.drawString(10, 120, graduation)
         c.setFillColorRGB(0, 0, 0)
         c.drawString(90, 120, memberdetail.graduation_year)
+        c.setFont('Helvetica',12)
+        c.setFillColorRGB(0, 255,255)
+        c.drawString(10, 135, title)
+       
         
     #lines = []
     #for memberdetail in memberdetails:
