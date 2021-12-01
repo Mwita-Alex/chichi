@@ -1,0 +1,101 @@
+
+{% extends 'pages/base.html'%}
+
+{% block content %}
+
+
+
+{% load static %}
+
+<main id="main">
+
+    <!-- ======= About Us Section ======= -->
+    <section class="breadcrumbs">
+      <div class="container">
+
+        <div class="d-flex justify-content-between align-items-center">
+          <h2 class="text-success">Registration Certificate Download</h2>
+          <!--ul>
+              {% for detail in details %}
+              <li>{{ detail.student_name}}</li>
+              {% endfor %}
+          </ul-->
+          <ol>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li>downloads</li>
+          </ol>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    <!-- ======= About Section ======= -->
+    <section class="about" data-aos="fade-up">
+      <div class="container">
+
+        <div class="row">
+         
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            {% include 'pages/message.html' %}
+            <h4 class="text-warning">download your Registration Certificate Here</h4>
+          
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {% for detail in details %}
+              <img src="{{ detail.image.url }}">
+                <div class="form-group">
+                  <label for="studentname">Student Name</label>
+                  <input type="text" class="form-control" id="studentname"  value="{{ detail.student_name}}">
+                 
+                  
+                </div>
+                <div class="form-group">
+                    <label for="studentname">phone number</label>
+                    <input type="text" class="form-control" id="studentname"  value="{{detail.phone_number}}">
+                   
+                   
+                  </div>
+                  <div class="form-group">
+                    <label for="studentname">University Studied</label>
+                    <input type="text" class="form-control" id="studentname"  value="{{detail.university_name}}">
+                   
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="studentname">Graduation year</label>
+                    <input type="text" class="form-control" id="studentname"  value="{{detail.graduation_year}}">
+                   
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="studentname">admission number</label>
+                    <input type="text" class="form-control" id="studentname"  value="{{detail.admission_number}}">
+                   
+                    
+                  </div>
+                  <div class="form-group">
+                    <label for="image">image</label>
+                    <input type="image" src= "{{ detail.image.url }}" class="img-fluid" alt="" style="float:right" width="100" height="100"> 
+                  </div>
+                  
+                  {% endfor %}
+                
+                
+                <a href="{% url 'pdfgenerator' %}" target="_parent" class="btn btn-primary"> 
+                 Download
+                </a>
+            </form>
+           
+            <!--h3 class="text-success"> UCSPAK Identity card</h3>
+            <p> <a href="{% url 'dashboard' %}">Click here to download your ID </a></p-->
+          </div>
+          <div class="col-lg-6">
+            <img src="{% static 'pages/assets/img/about.jpg' %}" class="img-fluid" alt="">
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+</main>
+
+{% endblock %}

@@ -6,8 +6,3 @@ class Blog(models.Model):
     blog_title = models.CharField(max_length = 100)
     blog_summary = models.CharField(max_length = 1000)
     url = models.URLField(blank=True)
-
-
-    def __str__(self):
-        return self.blog_title
-

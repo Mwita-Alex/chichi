@@ -15,16 +15,25 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Welcome to <span>UCSPAK</span></h2>
           <p class="animate__animated animate__fadeInUp">Amplifying community voices for sustainable peace in Kenya " a project sponsored by USAID via SaferWorld as the lead consortium in the program implementation in Kenya.</p>
-          <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          {% if user.is_authenticated %}
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Welcome {{user.username}}</a>
+          {% else %}
+            <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          {% endif %}  
         </div>
       </div>
+      <!--AUTHENTICATION TEMPLATE-->
 
       <!-- Slide 2 -->
       <div class="carousel-item">
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">we spread peace </h2>
           <p class="animate__animated animate__fadeInUp">Peace does not rest in the charters and covenants alone. It lies in the hearts and minds of all people. So let us not rest all our hopes on parchment and on paper, let us strive to build peace, a desire for peace, a willingness to work for peace in the hearts and minds of all of our people.</p>
-          <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          {% if user.is_authenticated %}
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Welcome {{user.username}}</a>
+          {% else %}
+            <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          {% endif %} 
         </div>
       </div>
 
@@ -33,7 +42,11 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">Let's discuss</h2>
           <p class="animate__animated animate__fadeInUp">Join the discussion to discuss on the role of youth and youth serving organizations in the implementation of UNSC Resolution 2250 on youth, peace and security.</p>
-          <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          {% if user.is_authenticated %}
+          <a href="" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Welcome {{user.username}}</a>
+          {% else %}
+            <a href="{% url 'register' %}" class="btn-get-started animate__animated animate__fadeInUp btn-warning">Register</a>
+          {% endif %} 
         </div>
       </div>
 

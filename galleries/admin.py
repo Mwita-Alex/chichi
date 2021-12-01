@@ -1,4 +1,7 @@
 from django.contrib import admin
 from .models import Gallery
 # Register your models here.
-admin.site.register(Gallery)
+
+@admin.register(Gallery)
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = ['image','image_title']

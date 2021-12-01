@@ -9,6 +9,6 @@ class Event(models.Model):
     event_summary = models.CharField(max_length = 1000)
     url = models.URLField(blank=True)
 
+def __str__(self):
+    return self.event_title
 
-    def __str__(self):
-        return self.event_title

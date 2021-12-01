@@ -1,7 +1,4 @@
 
-
-
-
 {% extends 'pages/base.html'%}
 
 {% block content %}
@@ -35,7 +32,15 @@
          
           <div class="col-lg-6 pt-4 pt-lg-0">
             {% include 'pages/message.html' %}
-            <h3 class="text-success"> UCSPAK Identity card</h1>
+            <h4 class="text-warning">Fill the form to download your ID</h4>
+            <form method="POST" enctype="multipart/form-data">
+              {% csrf_token %}
+              {{form.media}}
+              {{form.as_p}}
+              <button type="submit">SUBMIT</button>
+            </form>
+           
+            <h3 class="text-success"> UCSPAK Identity card</h3>
             <p> <a href="{% url 'dashboard' %}">Click here to download your ID </a></p>
           </div>
           <div class="col-lg-6">
