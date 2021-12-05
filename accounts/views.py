@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 from .forms import MemberForm
 from django.http import HttpResponse,HttpResponseRedirect
 from .models import Member
@@ -16,6 +17,12 @@ from reportlab.lib.units import mm
 
 root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Create your views here.
+
+
+def reset(request):
+    context = {}
+    return render(request,'accounts/reset.html',context)
+
 def login(request):
     context = {}
     if request.method == 'POST':
@@ -64,6 +71,8 @@ def register(request):
     else:
         return render(request,'accounts/register.html',context)
 
+
+@login_required(login_url='login')
 def logout(request):
     if request.method == 'POST':
         auth.logout(request)
@@ -72,10 +81,7 @@ def logout(request):
     context = {}
     return render(request,'accounts/logout.html',context)
 
-def reset(request):
-    context = {}
-    return render(request,'accounts/reset.html',context)
-
+@login_required(login_url='login')
 def dashboard(request):
     if request.method == 'POST':
          form = MemberForm(request.POST,request.FILES)
@@ -121,12 +127,12 @@ def dashboard(request):
             #memberdetails = Member.objects.filter(user=request.user)
             
 
-    
+@login_required(login_url='login')  
 def downloadpdfform(request):
   memberdetails = Member.objects.filter(user=request.user)
   return render(request,'accounts/downloadpdf.html',{'details': memberdetails})
 
-
+@login_required(login_url='login')
 def pdfgenerator(request):
     title = "UCSPAK IDENTITY CARD"
     name = "Name: "
@@ -199,6 +205,11 @@ def pdfgenerator(request):
     buf.seek(0)
 
     return FileResponse(buf, as_attachment=True,filename='ucspak membership-card.pdf')
+
+
+
+
+  
 
 
        

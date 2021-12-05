@@ -18,3 +18,15 @@ def team(request):
 def home2(request):
     context = {}
     return render(request,'pages/home2.html',context)
+
+def advisory(request):
+    context = {}
+    return render(request,'pages/advisory.html',context)
+
+def secretariat(request):
+    context = {}
+    return render(request,'pages/secretariat.html',context)
+
+def achievements(request):
+    context = {}
+    return render(request,'pages/achievements.html',context)

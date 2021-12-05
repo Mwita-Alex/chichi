@@ -11,7 +11,7 @@
 
   <!-- Favicons -->
   <link href="{% static 'pages/assets/img/favicon.png' %}" rel="icon">
-  <link href="{% static 'pages/assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+  <link href="{% static 'pages/assets/img/favicon.png' %}" rel="apple-touch-icon">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -25,8 +25,35 @@
   <link href="{% static 'pages/assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
   <link href="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
 
+
+
+    <!--CAROUSEL-->
+    <link rel="stylesheet" href="{% static 'pages/assets/carousel/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'pages/assets/carousel/fonts/icomoon/style.css' %}">
+
+    <link rel="stylesheet" href="{% static 'pages/assets/carousel/css/owl.carousel.min.css' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'pages/assets/carousel/css/bootstrap.min.css' %}">
+
+    <!--END CAROUSEL-->
+
+
+   <!-- TOP BAR Style -->
+  <link rel="stylesheet" href="{% static 'pages/assets/css/style1.css' %}">
   <!-- Template Main CSS File -->
   <link href="{% static 'pages/assets/css/style.css' %}" rel="stylesheet">
+
+
+  <!--TOP BAR REQUIREMENTS-->
+  <link rel="stylesheet" href="{% static 'pages/assets/fonts/icomoon/style.css' %}">
+
+  <link rel="stylesheet" href="{% static 'pages/assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'pages/assets/css/bootstrap.min.css' %}">
+
+
+    
+  
 
   <!-- =======================================================
   * Template Name: Moderna - v4.7.0
@@ -34,12 +61,73 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <!--BOOTSTRAP CARDS-->
+  <style>
+    .card-thumbnail {
+        max-height: 250px;
+        overflow: hidden;
+    }
+    .outer-div {
+    	display: flex;
+    }
+
+    .inner-div {
+        background-color: #e1f5fe;
+        margin: 0px 20px;
+        padding: 20px;
+        border: 1px solid #81d4fa;
+    }
+    .designer{
+      font-size: xx-small;
+      color: white;
+    }
+    </style>
+
+    <!--END OF BOOTSTRAP CARDS-->
 </head>
 
 <body>
 
+  <!--TOP BAR START-->
+  
+  <div class="site-mobile-menu site-navbar-target">
+    <div class="site-mobile-menu-header">
+      <div class="site-mobile-menu-close mt-3">
+        <span class="icon-close2 js-menu-toggle"></span>
+      </div>
+    </div>
+    <div class="site-mobile-menu-body"></div>
+  </div>
+
+
+  <div class="top-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <a href="#" class=""><span class="mr-2  icon-envelope-open-o"></span> <span class="d-none d-md-inline-block">ucspaksecretariat@gmail.com</span></a>
+          <span class="mx-md-2 d-inline-block"></span>
+          <a href="#" class=""><span class="mr-2  icon-phone"></span> <span class="d-none d-md-inline-block">+254724344040</span></a>
+
+
+          <div class="float-right">
+
+            <a href="https://twitter.com/IEBCKenya/status/1433041194230091784" target="_blank" class=""><span class="mr-2  icon-twitter"></span> <span class="d-none d-md-inline-block">Twitter</span></a>
+            <span class="mx-md-2 d-inline-block"></span>
+            <a href="https://www.facebook.com/UCSPAKOfficial" target="_blank"class=""><span class="mr-2  icon-facebook"></span> <span class="d-none d-md-inline-block">Facebook</span></a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!--TOP BAR END-->
+
   <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top d-flex align-items-center">
+  <header id="header" class="d-flex align-items-center js-sticky-header">
     <div class="container d-flex justify-content-between align-items-center">
 
       <div class="logo">
@@ -49,13 +137,31 @@
       </div>
 
       <nav id="navbar" class="navbar">
-        <ul>
+        <ul class="js-clone-nav">
           <li><a class="active " href="{% url 'index' %}">Home</a></li>
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'event' %}">Events</a></li>
-          <li><a href="{% url 'gallery' %}">Gallery</a></li>
-          <li><a href="{% url 'team' %}">Team</a></li>
-          <li><a href="{% url 'blog' %}">Blog</a></li>
+          <li><a href="{% url 'about' %}">About UCSPAK</a></li>
+          <li class="dropdown"><a href="#"><span>Leadership</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="{% url 'advisory' %}">Advisory Board</a></li>
+              <li><a href="{% url 'secretariat' %}">Secretariat</a></li>
+            </ul>
+          </li>
+          <li><a href="{% url 'achievements' %}">Achievements</a></li>
+        
+          <li class="dropdown"><a href="#"><span>Resources</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Publications and reports</a></li>
+              <li><a href="{% url 'gallery' %}">Photo Gallery</a></li>
+              <li><a href="#">Video Gallery</a></li>
+            </ul>
+          </li>
+  
+          </li>
+          <li><a href="{% url 'event' %}">Programmes</a></li>
+          <!--li><a href="{% url 'gallery' %}">Gallery</a></li-->
+          <!--li><a href="{% url 'team' %}">Team</a></li-->
+          <!--li><a href="{% url 'blog' %}">Blog</a></li-->
+          
         
           {% if user.is_authenticated %}
             <li><a href="javascript: {document.getElementById('logout').submit()}">Logout  {{user.username}}</a>
@@ -69,11 +175,11 @@
             <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
           {% else %}
             <li><a href="{% url 'login' %}">Login</a></li>
-            <li><a  href="{% url 'register' %}">Register</a></li>
+            <!--li><a  href="{% url 'register' %}">Register</a></li-->
           {% endif %}
             
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i class="bi bi-list mobile-nav-toggle js-menu-toggle"></i>
       </nav><!-- .navbar -->
 
     </div>
@@ -106,11 +212,13 @@
           <div class="col-lg-4 col-md-8 footer-contact">
             <h4>Contact Us</h4>
             <p class="text-success">
-              Moi Avenue, <br>
-              Nairobi, P.O BOX 02000<br>
+              C/o National Steering Committee on Peace Building and Conflict Management (NSC/P)<br>
+              Bruce House, <br>
+              14th Floor (South Wing) Along Standard Street<br>
+              P.O BOX 30510,00100 Nairobi<br>
               Kenya <br><br>
               <strong>Phone:</strong> +254724344040<br>
-              <strong>Email:</strong> info@ucspak.com<br>
+              <strong>Email:</strong> ucspaksecretariat@gmail.com<br>
             </p>
 
           </div>
@@ -132,7 +240,7 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>UCSPAK</span></strong>. All Rights Reserved
+        &copy; Copyright@2021 <strong><span>UCSPAK</span></strong>. All Rights Reserved
       </div>
     
     </div>
@@ -148,7 +256,7 @@
             Licensing information: https://bootstrapmade.com/license/
             Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=eBusiness
           -->
-            Designed by <a href="https://jengawebsites.com/">Jengawebsites, 0740211522</a>
+            <span class="designer">Designed by <a href="https://jengawebsites.com/">Jengawebsites, 0740211522</a></span>
           </div>
         </div>
       </div>
@@ -157,10 +265,16 @@
   </footer><!-- End Footer -->
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
+  
+  <!--TOP NAVBAR JS-->
+  <script src="{% static 'pages/assets/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'pages/assets/js/popper.min.js' %}"></script>
+    <script src="{% static 'pages/assets/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'pages/assets/js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'pages/assets/js/main1.js' %}"></script>
   <!-- Vendor JS Files -->
   <script src="{% static 'pages/assets/vendor/aos/aos.js' %}"></script>
-  <script src="{% static 'pages/assets/vendor/bootstrap/js/bootstrap.bundle.min.j' %}s"></script>
+  <script src="{% static 'pages/assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}s"></script>
   <script src="{% static 'pages/assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
   <script src="{% static 'pages/assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
   <script src="{% static 'pages/assets/vendor/php-email-form/validate.js' %}"></script>
@@ -168,9 +282,19 @@
   <script src="{% static 'pages/assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
   <script src="{% static 'pages/assets/vendor/waypoints/noframework.waypoints.js' %}"></script>
 
+
+    <!--CAROUSEL JS-->
+    <!--script src="{% static 'pages/assets/carousel/js/jquery-3.3.1.min.js' %}"></script-->
+    <!--script src="{% static 'pages/assets/carousel/js/popper.min.js' %}"></script-->
+    <!--script src="{% static 'pages/assets/carousel/js/bootstrap.min.js' %}"></script-->
+    <script src="{% static 'pages/assets/carousel/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'pages/assets/carousel/js/main.js' %}"></script>
+     <!--CAROUSEL END-->
+
   <!-- Template Main JS File -->
   <script src="{% static 'pages/assets/js/main.js' %}"></script>
+  <script src="{% static 'pages/assets/js/modal.js' %}"></script>
 
+ 
 </body>
-
 </html>
